@@ -176,7 +176,7 @@ async function parseTrojanHeader(buffer) {
     if (!address) {
         return {
             hasError: true,
-            message: `address is empty, addressType is ${address}`
+            message: `address is empty, addressType is ${atype}`
         };
     }
 
