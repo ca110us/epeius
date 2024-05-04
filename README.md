@@ -11,7 +11,7 @@ Deploy Trojan using a Serverless approach
 - Visit `https://[YOUR_DOMAIN]/link` and replace `ca110us` with your plain password.
 
 ## Not supported
-- UDP 🙅
+- UDP 🙅 (Cloudflare workers runtime does not support UDP yet)
 
 ## Disclaimer
 This project is for study/research purposes only. Users are responsible for legal compliance and ethical conduct. The author disclaims all liability for misuse.
