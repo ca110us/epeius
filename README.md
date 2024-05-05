@@ -5,10 +5,11 @@ Deploy Trojan using a Serverless approach
 
 ## Quick start
 - Create a new Worker in Cloudflare Workers dashboard.
-- Create env PASSWORD in your cf workers. You can generate [here](https://www.atatus.com/tools/sha224-to-hash). 
+- If your plain password is "123456", you can generate hash password "f8cdb04495ded47615258f9dc6a3f4707fd2405434fefc3cbf4ef4e6" [here](https://www.atatus.com/tools/sha224-to-hash).
+- Create env PASSWORD in your cf workers. set above "f8cdb04495ded47615258f9dc6a3f4707fd2405434fefc3cbf4ef4e6" to PASSWORD in env. 
 - Paste code from [worker.js](./src/worker.js) into the worker code editor. 
 - Binding a custom domain to the worker.
-- Visit `https://[YOUR_DOMAIN]/link` and replace `ca110us` with your plain password.
+- Visit `https://[YOUR_DOMAIN]/link` and replace `ca110us` with your plain password like above 123456.
 
 ## Config (example for clash)
 Add this node in config file for clash
