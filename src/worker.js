@@ -3,16 +3,21 @@ import { connect } from "cloudflare:sockets";
 let sha224Password = '08f32643dbdacf81d0d511f1ee24b06de759e90f8edf742bbdc57d88';
 let proxyIP = "";
 
+if (!isValidSHA224(sha224Password)) {
+    throw new Error('sha224Password is not valid');
+}
+
 const worker_default = {
     /**
      * @param {import("@cloudflare/workers-types").Request} request
-     * @param {{UUID: string, PROXYIP: string}} env
+     * @param {{SHA224PASS: string, PROXYIP: string}} env
      * @param {import("@cloudflare/workers-types").ExecutionContext} ctx
      * @returns {Promise<Response>}
      */
     async fetch(request, env, ctx) {
         try {
             proxyIP = env.PROXYIP || proxyIP;
+            sha224Password = env.SHA224PASS || sha224Password
             const upgradeHeader = request.headers.get("Upgrade");
             if (!upgradeHeader || upgradeHeader !== "websocket") {
                 const url = new URL(request.url);
@@ -296,6 +301,11 @@ async function remoteSocketToWS(remoteSocket, webSocket, retry, log) {
         log(`retry`);
         retry();
     }
+}
+
+function isValidSHA224(hash) {
+    const sha224Regex = /^[0-9a-f]{56}$/i;
+    return sha224Regex.test(hash);
 }
 
 function base64ToArrayBuffer(base64Str) {
