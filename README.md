@@ -10,6 +10,7 @@ Deploy Trojan using a Serverless approach
 - Paste code from [worker.js](./src/worker.js) into the worker code editor. 
 - Binding a custom domain to the worker.
 - Visit `https://[YOUR_DOMAIN]/link` and replace `ca110us` with your plain password like above 123456.
+![sha224 hash password](sha224-to-hash.png)
 
 ## Config (example for clash)
 Add this node in config file for clash
