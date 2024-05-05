@@ -10,6 +10,19 @@ Deploy Trojan using a Serverless approach
 - Binding a custom domain to the worker.
 - Visit `https://[YOUR_DOMAIN]/link` and replace `ca110us` with your plain password.
 
+## Config (example for clash)
+Add this node in config file for clash
+```yaml
+- name: cf-trojan
+  type: trojan
+  server: trojan.cf.xxx.xxx
+  port: 443
+  password: xxxxxxxx
+  udp: false
+  tls: true
+  network: ws
+```
+
 ## Not supported
 - UDP 🙅 (Cloudflare workers runtime does not support UDP yet), set the udp=false in your config file.
 
