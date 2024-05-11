@@ -1,5 +1,5 @@
 # Epeius
-[English](./README.md) | 简体中文
+[English](./README.md) | 简体中文 | [日本語](./README-ja_JP.md)
 
 以 Serverless 的方式部署 Trojan
 
